@@ -4,7 +4,7 @@ This project aims to automate [Linux From Scratch](http://www.linuxfromscratch.o
 
 Most of the instructions used to build LFS have been extracted from the LFS book.
 
-Currently, only the build of the *LFS toolchain* for [LFS 7.9-systemd](http://www.linuxfromscratch.org/lfs/view/7.9-systemd/) is provided.
+Currently, only the build of the *LFS toolchain* for [LFS 9.0-systemd](http://www.linuxfromscratch.org/lfs/view/9.0-systemd/) is provided.
 
 ## Prerequesites
 You need a Linux environment with:
@@ -19,7 +19,7 @@ This step has been excluded from the Dockerfile to speed up the build process. O
 
 The instructions hereafter will download the sources for LFS and put them in the `lfs-toolchain` directory. It take times to download the sources (size is around 340 Mo).
 
-    wget --quiet --timestamping http://www.linuxfromscratch.org/lfs/view/7.9-systemd/wget-list
+    wget --quiet --timestamping http://www.linuxfromscratch.org/lfs/view/9.0-systemd/wget-list
     wget --quiet --timestamping --directory-prefix=lfs-toolchain --continue --input-file=wget-list
 
 **Build the docker image for the toolchain**
@@ -27,7 +27,7 @@ The instructions hereafter will download the sources for LFS and put them in the
 The whole process is automated. All executed instructions are defined in `lfs-toolchain/Dockerfile`.
 The overall compilation may takes hours.
 
-    docker build --tag=lfs-systemd/lfs-toolchain:7.9 --build-arg PROC=$(nproc) lfs-toolchain
+    docker build --tag=lfs-systemd/lfs-toolchain:9.0 --build-arg PROC=$(nproc) lfs-toolchain
 
 **Extract the toolchain**
 
@@ -41,4 +41,4 @@ TODO: use the toolchain as a Dockerfile basis to build the LFS system.
 
 ## Licenses
 
-As precised in the [LFS book](http://www.linuxfromscratch.org/lfs/view/7.9-systemd/appendices/licenses.html), the LFS computer instructions are licensed under the [MIT License](http://www.linuxfromscratch.org/lfs/view/7.9-systemd/appendices/mit.html).
+As precised in the [LFS book](http://www.linuxfromscratch.org/lfs/view/9.0-systemd/appendices/licenses.html), the LFS computer instructions are licensed under the [MIT License](http://www.linuxfromscratch.org/lfs/view/7.9-systemd/appendices/mit.html).
